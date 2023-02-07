@@ -1,3 +1,4 @@
 export { CartWidget } from './CartWidget'
-export { ItemListContainer } from './ItemListContainer'
+export { ItemCard } from './ItemCard'
 export { NavBar } from './NavBar'
+export { SearchForm } from './SearchForm'

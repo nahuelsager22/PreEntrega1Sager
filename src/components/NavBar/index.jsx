@@ -1,39 +1,28 @@
-import React from "react"
-import logo from '../images/logo.jpg'
-import { CartWidget } from "../CartWidget"
+import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { CartWidget } from '../../components'
+
 
 const NavBar = () => {
+
     return (
-        <>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <img src={logo} alt="logo" className="logo" />
-                    <a class="navbar-brand" href="#" >SABORES DEL SUR</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#" style={{ color: "white" }}>SOBRE NOSOTROS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" style={{ color: "white" }}>NUESTROS PRODUCTOS</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: "white" }}>
-                                    CONTACTO
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled"><CartWidget/></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </>
-    )
+        <Navbar bg="light" expand="lg">
+            <Container fluid>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="m-auto me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll>
+                        <Navbar.Brand href="/">SABORES DEL SUR</Navbar.Brand>
+                        <Nav.Link href="/category/nosotros">SOBRE NOSOTROS</Nav.Link>
+                        <Nav.Link href="/category/contact">CONTACTO</Nav.Link>
+                        <CartWidget />
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }
 
 export { NavBar }
