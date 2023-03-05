@@ -1,21 +1,31 @@
-import { productos } from "../data/productos";
+import { getFirestore, doc, getDoc, collection, getDocs } from 'firebase/firestore'
 
-// const getAll = () => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(productos);
-//     }, [500]);
-//   });
-// };
+const getAll = async (producto) => {
 
-const get = (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productos.find((elem) => elem.id.toString() === id));
-    }, [100]);
-  });
-};
+  const db = getFirestore()
 
-const add = (itemDetail) => {};
+  const itemCollection = collection(db, producto)
 
-export const itemService = { get, add };
+  const snapshot = await getDocs(itemCollection)
+
+  const item = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+
+  return item
+
+}
+
+const get = async (id) => {
+  const db = getFirestore()
+
+  const itemDoc = doc(db, "home", id)
+  
+  const snapshot = await getDoc(itemDoc)
+
+  const item = { id: snapshot.id, ...snapshot.data() }
+
+  return item
+}
+
+const add = (itemDetail) => { };
+
+export const itemService = { get, getAll, add };
