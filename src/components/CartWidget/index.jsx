@@ -34,7 +34,7 @@ const CartWidget = () => {
         const ordersCollection = collection(db, 'orders')
         const response = addDoc(ordersCollection, order)
             .then(({ id }) => { console.log(id) })
-        console.log(response.id)
+        localStorage.setItem(response.id)
     }
 
 
@@ -64,7 +64,7 @@ const CartWidget = () => {
                             <Form.Control required type="email" placeholder="name@example.com" />
                         </FloatingLabel>
                     </Container>
-                    <Button variant="dark" onClick={handleClick}>
+                    <Button variant="dark" type="submit" onClick={handleClick}>
                         Realizar pedido
                     </Button>
                 </Form>

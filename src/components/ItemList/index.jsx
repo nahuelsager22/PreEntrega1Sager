@@ -16,6 +16,7 @@ const ItemList = () => {
     useEffect(() => {
         localStorage.setItem('items', JSON.stringify(items));
     }, [items]);
+
     return (
         <>
             <Container>

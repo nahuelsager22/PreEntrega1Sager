@@ -28,6 +28,7 @@ const NavBar = () => {
                             <NavDropdown.Item onClick={() => navigate(`/category/empanadas`)}>Empanadas</NavDropdown.Item>
                             <NavDropdown.Item onClick={() => navigate(`/category/sandwichs`)}>Sandwichs</NavDropdown.Item>
                             <NavDropdown.Item onClick={() => navigate(`/category/plato`)}>Al plato</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => navigate(`/category/postres`)}>Postres</NavDropdown.Item>
                         </NavDropdown>
                         <Link to={"/cart"} >
                             <Button variant="dark">
