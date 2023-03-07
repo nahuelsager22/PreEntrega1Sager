@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../contexts/ShoppingCartContext";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -9,6 +9,7 @@ import { Container } from 'react-bootstrap';
 
 const CartWidget = () => {
     const [cart, setCart] = useContext(CartContext);
+    const [orders, setOrders] = useState()
 
     const quantity = cart.reduce((acc, curr) => {
         return acc + curr.quantity;
@@ -33,10 +34,11 @@ const CartWidget = () => {
         const db = getFirestore()
         const ordersCollection = collection(db, 'orders')
         const response = addDoc(ordersCollection, order)
-            .then(({ id }) => { console.log(id) })
-        localStorage.setItem(response.id)
+            .then(({ id }) =>  setOrders(id) )
+        localStorage.setItem(order, JSON.stringify(order))
     }
 
+    console.log(orders)
 
     return (
         <>
@@ -47,7 +49,7 @@ const CartWidget = () => {
                     <Card.Text>
                         Articulos en en carrito: {quantity}
                     </Card.Text>
-                    <Button onClick={() => localStorage.setItem('cart', JSON.stringify(cart))} variant="success">Checkout</Button>
+                    {/* <Button onClick={() => localStorage.setItem('cart', JSON.stringify(cart))} variant="success">Checkout</Button> */}
                 </Card.Body>
                 <Form>
                     <Container>
@@ -64,10 +66,14 @@ const CartWidget = () => {
                             <Form.Control required type="email" placeholder="name@example.com" />
                         </FloatingLabel>
                     </Container>
-                    <Button variant="dark" type="submit" onClick={handleClick}>
+                    <Button variant="dark" onClick={handleClick} >
                         Realizar pedido
                     </Button>
                 </Form>
+                <Card.Header>Código de orden:</Card.Header>
+                <Card.Body>
+                    <Card.Title>{orders}</Card.Title>
+                </Card.Body>
                 <Card.Footer className="text-muted">¡Gracias por su compra!</Card.Footer>
             </Card>
         </>

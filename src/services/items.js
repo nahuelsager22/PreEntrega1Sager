@@ -17,7 +17,7 @@ const getAll = async (producto) => {
 const get = async (id) => {
   const db = getFirestore()
 
-  const itemDoc = doc(db, "home", id)
+  const itemDoc = doc(db, "home" , id)
   
   const snapshot = await getDoc(itemDoc)
 

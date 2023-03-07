@@ -12,21 +12,28 @@ const Empanadas = () => {
     const { empanadas } = useParams()
 
     useEffect(() => {
-        itemService.getAll("empanadas").then((data) => setItems(data))
+        itemService.getAll("home").then((data) => setItems(data))
     }, [])
 
     return (
-        <>
-            <Container>
-                <Row md={3} >
-                    {
-                        items.map((product, idx) => {
-                            return <Item key={product.id} {...product} />;
-                        })
+        <Container>
+            <Row>
+                {items.map(
+                    ({ id, name, img, price, clave, description, onClick }) => {
+                        return (
+                            <Col key={id}>
+                                <Item
+                                    id={id}
+                                    img={img}
+                                    name={name}
+                                    price={price}
+                                />
+                            </Col>
+                        )
                     }
-                </Row>
-            </Container>
-        </>
+                )}
+            </Row>
+        </Container>
     )
 }
 
@@ -42,17 +49,24 @@ const Pizzas = () => {
     }, [])
 
     return (
-        <>
-            <Container>
-                <Row md={3} >
-                    {
-                        items.map((product, idx) => {
-                            return <Item key={product.id} {...product} />;
-                        })
+        <Container>
+            <Row>
+                {items.map(
+                    ({ id, name, img, price, description, onClick, clave }) => {
+                        return (
+                            <Col key={id}>
+                                <Item
+                                    id={id}
+                                    img={img}
+                                    name={name}
+                                    price={price}
+                                />
+                            </Col>
+                        )
                     }
-                </Row>
-            </Container>
-        </>
+                )}
+            </Row>
+        </Container>
     )
 }
 
@@ -68,17 +82,24 @@ const Plato = () => {
     }, [])
 
     return (
-        <>
-            <Container>
-                <Row md={3} >
-                    {
-                        items.map((product, idx) => {
-                            return <Item key={product.id} {...product} />;
-                        })
+        <Container>
+            <Row>
+                {items.map(
+                    ({ id, name, img, price, clave, description, onClick }) => {
+                        return (
+                            <Col key={id}>
+                                <Item
+                                    id={id}
+                                    img={img}
+                                    name={name}
+                                    price={price}
+                                />
+                            </Col>
+                        )
                     }
-                </Row>
-            </Container>
-        </>
+                )}
+            </Row>
+        </Container>
     )
 }
 
@@ -94,17 +115,24 @@ const Postres = () => {
     }, [])
 
     return (
-        <>
-            <Container>
-                <Row md={3} >
-                    {
-                        items.map((product, idx) => {
-                            return <Item key={product.id} {...product} />;
-                        })
+        <Container>
+            <Row>
+                {items.map(
+                    ({ id, name, img, price, clave, description, onClick }) => {
+                        return (
+                            <Col key={id}>
+                                <Item
+                                    id={id}
+                                    img={img}
+                                    name={name}
+                                    price={price}
+                                />
+                            </Col>
+                        )
                     }
-                </Row>
-            </Container>
-        </>
+                )}
+            </Row>
+        </Container>
     )
 }
 
@@ -116,21 +144,28 @@ const Sandwich = () => {
     const { sandwichs } = useParams()
 
     useEffect(() => {
-        itemService.getAll("sandwichs").then((data) => setItems(data))
+        itemService.getAll("sandwich").then((data) => setItems(data))
     }, [])
 
     return (
-        <>
-            <Container>
-                <Row md={3} >
-                    {
-                        items.map((product, idx) => {
-                            return <Item key={product.id} {...product} />;
-                        })
+        <Container>
+            <Row>
+                {items.map(
+                    ({ id, name, img, price, clave, description, onClick }) => {
+                        return (
+                            <Col key={id}>
+                                <Item
+                                    id={id}
+                                    img={img}
+                                    name={name}
+                                    price={price}
+                                />
+                            </Col>
+                        )
                     }
-                </Row>
-            </Container>
-        </>
+                )}
+            </Row>
+        </Container>
     )
 }
 

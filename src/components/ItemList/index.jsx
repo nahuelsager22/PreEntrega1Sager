@@ -1,7 +1,7 @@
 import React from "react";
 import { Item } from "../ItemCard";
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { itemService } from '../../services/items'
 import { Card, Col, Container, Row } from "react-bootstrap";
 
