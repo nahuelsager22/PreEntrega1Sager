@@ -12,7 +12,7 @@ const Empanadas = () => {
     const { empanadas } = useParams()
 
     useEffect(() => {
-        itemService.getAll("home").then((data) => setItems(data))
+        itemService.getAll("empanadas").then((data) => setItems(data))
     }, [])
 
     return (
@@ -144,7 +144,7 @@ const Sandwich = () => {
     const { sandwichs } = useParams()
 
     useEffect(() => {
-        itemService.getAll("sandwich").then((data) => setItems(data))
+        itemService.getAll("sandwichs").then((data) => setItems(data))
     }, [])
 
     return (
