@@ -1,17 +1,17 @@
 import React from "react";
-import { NavBar, CartWidget, Empanadas, Pizzas, Plato, Postres, Sandwich } from "./components";
+import { NavBar, Cart, Empanadas, Pizzas, Plato, Postres, Sandwich } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ShoppingCartProvider } from "./contexts/ShoppingCartContext";
+import { CartProvider } from "./contexts/CartContext";
 import { ItemListContainer, ItemDetailContainer } from "./pages";
 
 const App = () => {
   return (
-    <ShoppingCartProvider>
+    <CartProvider>
       <Router>
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
-          <Route path="/shoppingcart" element={<CartWidget />} />
+          <Route path="/shoppingcart" element={<Cart />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
           <Route path="/category/empanadas" element={<Empanadas />} />
           <Route path="/category/pizzas" element={<Pizzas />} />
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/category/sandwichs" element={<Sandwich />} />
         </Routes>
       </Router>
-    </ShoppingCartProvider>
+    </CartProvider>
   );
 };
 

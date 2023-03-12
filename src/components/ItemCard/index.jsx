@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { CartContext } from "../../contexts/ShoppingCartContext";
+import { CartContext } from "../../contexts/CartContext";
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom";
 
-const Item = ({ name, price, id, img, onClick }) => {
+const Item = ({ name, price, id, img, clave, onClick }) => {
     const [cart, setCart] = useContext(CartContext);
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));

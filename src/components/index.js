@@ -1,3 +1,4 @@
+export { Cart } from './Cart'
 export { CartWidget } from './CartWidget'
 export { Item } from './ItemCard'
 export { ItemDetail } from './ItemDetail'
