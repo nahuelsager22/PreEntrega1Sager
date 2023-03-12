@@ -1,3 +1,14 @@
+# La idea de éste proyecto es ser el puntapie inicial para desarrollar la página web de muestro negocio familiar.
+Aún faltan agregar más funcionalidades de aquí en adelante; así como también re-pensar algunas otras que, a pesar de que me ayudaron a aprender muchas de las funcionalidades que nos ofrece React, no están en mis planes para el futuro de la página.
+# Actualmente cumple funciones de un e-comerce: 
+- Menú inicial de productos
+- Ver categorías disponibles
+- Nombre de la marca que direcciona a la página de incio
+- Detalle de los productos
+- Selección de los mismos
+- Calcular del valor de los items seleccionados
+- Posibilidad de visualizar el código de la orden hecha en Firebase.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
